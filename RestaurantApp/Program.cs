@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace RestaurantApp
 {
@@ -19,6 +20,11 @@ namespace RestaurantApp
  
         };
 
+            foreach ( var item in restaurants)
+            {
+                Console.WriteLine($"{item.Name} Type:{item.Type} -- {item.Rate}");
+            }
+
         }
     }
 
@@ -31,6 +37,10 @@ namespace RestaurantApp
 
         public Restaurant(int id,string name, string type, double rate)
         {
+            this.Id = -id;
+            this.Name = name;
+            this.Type = type;
+            this.Rate = rate;
 
         }
 
